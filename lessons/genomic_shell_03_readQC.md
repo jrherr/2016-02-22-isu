@@ -154,7 +154,7 @@ Lets examine the results in detail
     $ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
     $ ls
 
-    > The zip files need to be unpacked with the 'unzip' program.  
+> The zip files need to be unpacked with the 'unzip' program.  
 #### Use unzip to unzip the FastQC results: 
    
     $ unzip *.zip
