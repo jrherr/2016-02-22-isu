@@ -1,6 +1,6 @@
 ---
 layout: lesson
-root: .
+root: ../
 title: Read QC
 author: Sheldon McKay 
 ---
