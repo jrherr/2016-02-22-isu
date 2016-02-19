@@ -209,20 +209,19 @@ For our first command, let’s run find . -type d. As always, the . on its own m
 
 If we change -type d to -type f, we get a listing of all the files instead:
 
-   $ find . -type f
-
-   ./dc_sample_data
-   ./FastQC/fastqc_icon.ico	
-   ./FastQC/LICENSE_JHDF5.txt
-   ./FastQC/jbzip2-0.9.jar
-   ./FastQC/LICENSE.txt
-   ./FastQC/Configuration/limits.txt
-   ./FastQC/Configuration/adapter_list.txt
-   ./FastQC/Configuration/contaminant_list.txt
-   ./FastQC/Help/2 Basic Operations/2.3 Saving a Report.html
-   ./FastQC/Help/2 Basic Operations/2.1 Opening a sequence file.html
-   ./FastQC/Help/2 Basic Operations/2.2 Evaluating Results.html
-   ./FastQC/Help/1 Introduction/1.1 What is FastQC.html
+    $ find . -type f
+    ./dc_sample_data
+    ./FastQC/fastqc_icon.ico	
+    ./FastQC/LICENSE_JHDF5.txt
+    ./FastQC/jbzip2-0.9.jar
+    ./FastQC/LICENSE.txt
+    ./FastQC/Configuration/limits.txt
+    ./FastQC/Configuration/adapter_list.txt
+    ./FastQC/Configuration/contaminant_list.txt
+    ./FastQC/Help/2 Basic Operations/2.3 Saving a Report.html
+    ./FastQC/Help/2 Basic Operations/2.1 Opening a sequence file.html
+    ./FastQC/Help/2 Basic Operations/2.2 Evaluating Results.html
+    ./FastQC/Help/1 Introduction/1.1 What is FastQC.html
 
 find automatically goes into subdirectories, their subdirectories, and so on to find everything that matches the pattern we’ve given it. If we don’t want it to, we can use -maxdepth to restrict the depth of search:
 
