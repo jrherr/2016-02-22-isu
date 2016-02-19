@@ -98,17 +98,17 @@ The main functions of FastQC are
 ### A. Stage your data
 
 
-* Create a working directory for your analysis
+#### Create a working directory for your analysis
 
 this command takes us to the home directory
-     ```
-     $ cd
-     ```
+     
+      $ cd
+     
 then, make a directory
-     ```        
+             
      $ mkdir dc_workshop
-     ```
-* Create three three subdirectories
+     
+#### Create three three subdirectories
 
      $ mkdir dc_workshop/data
      $ mkdir dc_workshop/docs
