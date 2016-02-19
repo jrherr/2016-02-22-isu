@@ -1,6 +1,6 @@
 ---
 layout: workshop
-root: ../
+root: ..
 title: Read QC
 author: Sheldon McKay 
 ---
