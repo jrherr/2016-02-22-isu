@@ -1,5 +1,5 @@
 ---
-layout: workshop
+layout: lesson
 root: .
 title: Read QC
 author: Sheldon McKay 
