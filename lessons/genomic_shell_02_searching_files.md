@@ -269,6 +269,12 @@ $ find . -name haiku.txt
 find did what we asked; we just asked for the wrong thing.
 
 To get what we want, let’s do what we did with grep: put *.txt in single quotes to prevent the shell from expanding the * wildcard. This way, find actually gets the pattern *.txt, not the expanded filename haiku.txt:
+~~~ {.bash}
+$ find . -name '*.txt'
+~~~
+~~~ {.output}
+./data/one.txt
+~~~
 ```
 $ find . -name '*.txt'
 ```
