@@ -238,13 +238,13 @@ Now let’s try matching by name:
 
 We expected it to find all the text files, but it only prints out ./haiku.txt. The problem is that the shell expands wildcard characters like * before commands run. Since *.txt in the current directory expands to haiku.txt, the command we actually ran was:
 
-   $ find . -name limits.txt
+    $ find . -name limits.txt
 
 find did what we asked; we just asked for the wrong thing.
 
 To get what we want, let’s do what we did with grep: put *.txt in single quotes to prevent the shell from expanding the * wildcard. This way, find actually gets the pattern *.txt, not the expanded filename haiku.txt:
 
-   $ find . -name '*.txt'
+    $ find . -name '*.txt'
 
 ## Where can I learn more about the shell?
 
