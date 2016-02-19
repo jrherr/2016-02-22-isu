@@ -1,6 +1,6 @@
 ---
-layout: workshop
-root: .
+layout: page
+root: ..
 title: 
 author: Sheldon McKay 
 ---
