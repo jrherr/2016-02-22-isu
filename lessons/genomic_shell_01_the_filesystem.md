@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: workshop
+root: ..
 title: "The Shell"
 comments: true
 date: 2016-02-19
