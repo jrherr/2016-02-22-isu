@@ -118,7 +118,7 @@ The main functions of FastQC are
     $ mv ~/.dc_sampledata_lite/untrimmed_fastq/ ~/dc_workshop/data/
 
 
-###B. Run FastQC
+### B. Run FastQC
 
 1. Navigate to the initial fastq dataset
    
@@ -148,21 +148,20 @@ Now, let's create a home for our results
 
 Lets examine the results in detail
 
-1. Navigate to the results and view the directory contents
+  1. Navigate to the results and view the directory contents
 
    
     $ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
     $ ls
 
-   
- > The zip files need to be unpacked with the 'unzip' program.  
-2. Use unzip to unzip the FastQC results: 
+    > The zip files need to be unpacked with the 'unzip' program.  
+  2. Use unzip to unzip the FastQC results: 
    
     $ unzip *.zip
 
 Did it work? No, because 'unzip' expects to get only one zip file.  Welcome to the real world. We *could* do each file, one by one, but what if we have 500 files?  There is a smarter way. We can save time by using a simple shell 'for loop' to iterate through the list of files in *.zip. After you type the first line, you will get a special '>' prompt to type next next lines. You start with 'do', then enter your commands, then end with 'done' to execute the loop.
 
-3. Build a ``for`` loop to unzip the files
+   3. Build a ``for`` loop to unzip the files
 
     
      $ for zip in *.zip
