@@ -42,9 +42,9 @@ so for example in our data set, one complete read is:
 This is a pretty bad read. 
 
 Notice that line 4 is:    
-```
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-```
+
+       #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 As mentioned above, line 4 is a encoding of the quality. In this case, the code is the [ASCII](https://en.wikipedia.org/wiki/ASCII#ASCII_printable_code_chart) character table. According to the chart a '#' has the value 35 and '!' has the value 33 - **But these values are not actually the quality scores!** There are actually several historical differences in how Illumina and other players have encoded the scores. Heres the chart from wikipedia:
 
@@ -94,86 +94,91 @@ The main functions of FastQC are
 
 
 ## Running FASTQC
+
 ### A. Stage your data
+
 
 1. Create a working directory for your analysis
    
-    $ cd
+     $ cd
     # this command takes us to the home directory
     
-    $ mkdir dc_workshop
+     $ mkdir dc_workshop
 
 2. Create three three subdirectories
 
-    $ mkdir dc_workshop/data
-    $ mkdir dc_workshop/docs
-    $ mkdir dc_workshop/results
+     $ mkdir dc_workshop/data
+     $ mkdir dc_workshop/docs
+     $ mkdir dc_workshop/results
 
   > The sample data we will be working with is in a hidden directory (placing a '.' in front of a directory name hides the directory. In the next step we will move some of those hidden files into our new dirctories to start our project. 
 3. Move our sample data to our working (home) directory
    
-```
-$ mv ~/.dc_sampledata_lite/untrimmed_fastq/ ~/dc_workshop/data/
-```
+
+    $ mv ~/.dc_sampledata_lite/untrimmed_fastq/ ~/dc_workshop/data/
+
 
 ###B. Run FastQC
 
 1. Navigate to the initial fastq dataset
    
-    ```
+    
     $ cd ~/dc_workshop/data/untrimmed_fastq/
-    ```
+    
 
 To run the fastqc program, we call it from its location in ``~/FastQC``.  fastqc will accept multiple file names as input, so we can use the *.fastq wildcard.
+
 2. Run FastQC on all fastq files in the directory
 
-    ```
+    
     $ ~/FastQC/fastqc *.fastq
-    ```
+    
 
 Now, let's create a home for our results
-    ```
+    
     $ mkdir ~/dc_workshop/results/fastqc_untrimmed_reads
-    ```
+
+    
 3. Next, move the files there (recall, we are still in ``~/dc_workshop/data/untrimmed_fastq/``)
-   ```bash 
+    
     $ mv *.zip ~/dc_workshop/results/fastqc_untrimmed_reads/
     $ mv *.html ~/dc_workshop/results/fastqc_untrimmed_reads/
-    ```
-###C. Results
+    
+### C. Results
 
 Lets examine the results in detail
 
 1. Navigate to the results and view the directory contents
 
-   ```bash
-$ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
-$ ls
-```
+   
+    $ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
+    $ ls
+
    
  > The zip files need to be unpacked with the 'unzip' program.  
 2. Use unzip to unzip the FastQC results: 
-   ```bash
-$ unzip *.zip
-```
+   
+    $ unzip *.zip
+
 Did it work? No, because 'unzip' expects to get only one zip file.  Welcome to the real world. We *could* do each file, one by one, but what if we have 500 files?  There is a smarter way. We can save time by using a simple shell 'for loop' to iterate through the list of files in *.zip. After you type the first line, you will get a special '>' prompt to type next next lines. You start with 'do', then enter your commands, then end with 'done' to execute the loop.
+
 3. Build a ``for`` loop to unzip the files
 
-   ```bash 
-$ for zip in *.zip
-> do
-> unzip $zip
-> done
-```
+    
+     $ for zip in *.zip
+      > do
+      > unzip $zip
+      > done
+
 
   Note that, in the first line, we create a variable named 'zip'.  After that, we call that variable with the syntax $zip.  $zip is assigned the value of each item (file) in the list *.zip, once for each iteration of the loop.
 
 This loop is basically a simple program.  When it runs, it will run unzip once for each file (whose name is stored in the $zip variable). The contents of each file will be unpacked into a separate directory by the unzip program.
 
 The for loop is interpreted as a multipart command.  If you press the up arrow on your keyboard to recall the command, it will be shown like so:
-   ```bash
-    for zip in *.zip; do echo File $zip; unzip $zip; done
-```
+   
+    $ for zip in *.zip; do echo File $zip; unzip $zip; done
+
 
 When you check your history later, it will help your remember what you did!
 
@@ -181,9 +186,9 @@ When you check your history later, it will help your remember what you did!
 
 To save a record, let's cat all fastqc summary.txts into one full_report.txt and move this to ``~/dc_workshop/docs``. You can use wildcards in paths as well as file names.  Do you remember how we said 'cat' is really meant for concatenating text files?
 
-```bash    
-cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt
-```
+    
+    $ cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt
+
 
 
 ##How to clean reads using *Trimmomatic*
