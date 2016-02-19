@@ -100,11 +100,8 @@ The main functions of FastQC are
 
 #### Create a working directory for your analysis
 
-this command takes us to the home directory
-     
       $ cd
-     
-then, make a directory
+>this command takes us to the home directory     
              
      $ mkdir dc_workshop
      
@@ -123,7 +120,7 @@ then, make a directory
 
 ### B. Run FastQC
 
-1. Navigate to the initial fastq dataset
+#### Navigate to the initial fastq dataset
    
     
     $ cd ~/dc_workshop/data/untrimmed_fastq/
@@ -131,7 +128,7 @@ then, make a directory
 
 To run the fastqc program, we call it from its location in ``~/FastQC``.  fastqc will accept multiple file names as input, so we can use the *.fastq wildcard.
 
-2. Run FastQC on all fastq files in the directory
+#### Run FastQC on all fastq files in the directory
 
     
     $ ~/FastQC/fastqc *.fastq
@@ -142,7 +139,7 @@ Now, let's create a home for our results
     $ mkdir ~/dc_workshop/results/fastqc_untrimmed_reads
 
     
-3. Next, move the files there (recall, we are still in ``~/dc_workshop/data/untrimmed_fastq/``)
+#### Next, move the files there (recall, we are still in ``~/dc_workshop/data/untrimmed_fastq/``)
     
     $ mv *.zip ~/dc_workshop/results/fastqc_untrimmed_reads/
     $ mv *.html ~/dc_workshop/results/fastqc_untrimmed_reads/
@@ -151,20 +148,20 @@ Now, let's create a home for our results
 
 Lets examine the results in detail
 
-  1. Navigate to the results and view the directory contents
+#### Navigate to the results and view the directory contents
 
    
     $ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
     $ ls
 
     > The zip files need to be unpacked with the 'unzip' program.  
-  2. Use unzip to unzip the FastQC results: 
+#### Use unzip to unzip the FastQC results: 
    
     $ unzip *.zip
 
 Did it work? No, because 'unzip' expects to get only one zip file.  Welcome to the real world. We *could* do each file, one by one, but what if we have 500 files?  There is a smarter way. We can save time by using a simple shell 'for loop' to iterate through the list of files in *.zip. After you type the first line, you will get a special '>' prompt to type next next lines. You start with 'do', then enter your commands, then end with 'done' to execute the loop.
 
-   3. Build a ``for`` loop to unzip the files
+#### Build a ``for`` loop to unzip the files
 
     
      $ for zip in *.zip
