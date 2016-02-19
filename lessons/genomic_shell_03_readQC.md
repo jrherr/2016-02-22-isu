@@ -101,10 +101,13 @@ The main functions of FastQC are
 * Create a working directory for your analysis
 
 this command takes us to the home directory
+     ```
      $ cd
-then, make a directory        
+     ```
+then, make a directory
+     ```        
      $ mkdir dc_workshop
-
+     ```
 * Create three three subdirectories
 
      $ mkdir dc_workshop/data
