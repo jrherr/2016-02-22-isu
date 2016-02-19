@@ -210,6 +210,7 @@ For our first command, let’s run find . -type d. As always, the . on its own m
 If we change -type d to -type f, we get a listing of all the files instead:
 
    $ find . -type f
+
    ./dc_sample_data
    ./FastQC/fastqc_icon.ico	
    ./FastQC/LICENSE_JHDF5.txt
