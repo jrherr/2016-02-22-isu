@@ -410,7 +410,7 @@ We want to be able to look at these files and do some things with them.
 
 ### Wild cards
 
-Navigate to the `~/dc_sample_data/data/untrimmed_fastq` directory. This
+Navigate to the `~/dc_sample_data/untrimmed_fastq` directory. This
 directory contains our FASTQ files.
 
 The `*` character is a shortcut for "everything". Thus, if
