@@ -32,7 +32,7 @@ Let's have a look at the results. This is the boxplot analysis for your FASTQ da
 This indicates very poor quality toward the end of the reads. You can also look at lots of other quality issues, including potential adapter contamination, and over-represented kmers near the beginning of the read. Contrast this to a [good sequencing run](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html).
 
 
-![Before Trimming](images/SRR519926-fastqc-before.jpg)
+![Before Trimming](img/SRR519926-fastqc-before.jpg)
 
 ## Trimming and filtering your sequence data
 We're going to use a tool called Trimmomatic to trim and filter our sequence data.
@@ -105,4 +105,4 @@ Now, let's fun FastQC again,
 
     $ scp dcuser@ec2-54-174-230-106.compute-1.amazonaws.com:~/dc_workshop/results/fastqc_trimmed_reads/*.html .
 
-![After Trimming](images/SRR519926-fastqc-after.jpg)
+![After Trimming](img/SRR519926-fastqc-after.jpg)
