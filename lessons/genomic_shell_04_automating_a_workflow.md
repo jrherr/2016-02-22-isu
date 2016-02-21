@@ -80,7 +80,9 @@ The thing about running programs on the command line is that the shell may not k
 ## A real shell script
 Before start, let's delete what we generate before
 
-       $ mr -rf ~/dc_workshop/results/fastqc_untrimmed_reads
+       $ rm -rf ~/dc_workshop/results/fastqc_untrimmed_reads
+
+       WARNING!!! be careful to use flag '-rf'. this will delete all your file permamently in the directory without warning
 
 Now, let's do something real.  First, recall the code from our our fastqc
 workflow earlier, with a few extra "echo" statements.
