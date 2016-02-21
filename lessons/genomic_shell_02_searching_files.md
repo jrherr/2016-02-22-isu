@@ -23,7 +23,7 @@ Let's give it a try!
 
 Suppose we want to see how many reads in our file have really bad, with 10 consecutive Ns  
 Let's search for the string NNNNNNNNNN in file 
-
+     $ cd ~/dc_sample_data/untrimmed_fastq
      $ grep NNNNNNNNNN SRR098026.fastq
 
 We get back a lot of lines.  What is we want to see the whole fastq record for each of these read.
@@ -118,7 +118,7 @@ learn to become proficient with the pipe and redirection operators:
 Finally, let's use the new tools in our kit and a few new ones to example our SRA metadata file.
 
     $ cd 
-    $ cd dc_sample_data/
+    $ cd dc_sample_data/sra_metadata
 
 Let's ask a few questions about the data
 
@@ -166,7 +166,7 @@ header and sort the values.  The '-v' option for greap means return all lines th
 This returns a sorted list (too long to show here) of PAIRED and SINGLE values.  Now we can use 'uniq' with the '-c' flag to
 count the different categories.
 
-    $ cut -f3 SraRunTable.txt | grep -v LibraryLayout_s |	sort | uniq -c
+    $ cut -f3 SraRunTable.txt | grep -v LibraryLayout_s | sort | uniq -c
       2 PAIRED
      35 SINGLE 
 
@@ -202,27 +202,13 @@ OK, we are good to go.
 While grep finds lines in files, the find command finds files themselves. Again, it has a lot of options; to show how the simplest ones work, we’ll use the directory tree shown below.
 
 For our first command, let’s run find . -type d. As always, the . on its own means the current working directory, which is where we want our search to start; -type d means “things that are directories”. Sure enough, find’s output is the names of the five directories in our little tree (including .):
-
+    $ cd ~/FastQC
     $ find . -type d
-    ./dc_sample_data
-    ./FastQC
 
 If we change -type d to -type f, we get a listing of all the files instead:
 
     $ find . -type f
-    ./dc_sample_data
-    ./FastQC/fastqc_icon.ico	
-    ./FastQC/LICENSE_JHDF5.txt
-    ./FastQC/jbzip2-0.9.jar
-    ./FastQC/LICENSE.txt
-    ./FastQC/Configuration/limits.txt
-    ./FastQC/Configuration/adapter_list.txt
-    ./FastQC/Configuration/contaminant_list.txt
-    ./FastQC/Help/2 Basic Operations/2.3 Saving a Report.html
-    ./FastQC/Help/2 Basic Operations/2.1 Opening a sequence file.html
-    ./FastQC/Help/2 Basic Operations/2.2 Evaluating Results.html
-    ./FastQC/Help/1 Introduction/1.1 What is FastQC.html
-
+    
 find automatically goes into subdirectories, their subdirectories, and so on to find everything that matches the pattern we’ve given it. If we don’t want it to, we can use -maxdepth to restrict the depth of search:
 
      $ find . -maxdepth 1 -type f
@@ -235,13 +221,13 @@ Now let’s try matching by name:
 
     $ find . -name *.txt
 
-We expected it to find all the text files, but it only prints out ./haiku.txt. The problem is that the shell expands wildcard characters like * before commands run. Since *.txt in the current directory expands to haiku.txt, the command we actually ran was:
+We expected it to find all the text files, but it only prints out LICENSE.txt. The problem is that the shell expands wildcard characters like * before commands run. Since *.txt in the current directory expands to LICENSE.txt, the command we actually ran was:
 
-    $ find . -name limits.txt
+    $ find . -name LICENSE.txt
 
 find did what we asked; we just asked for the wrong thing.
 
-To get what we want, let’s do what we did with grep: put *.txt in single quotes to prevent the shell from expanding the * wildcard. This way, find actually gets the pattern *.txt, not the expanded filename haiku.txt:
+To get what we want, let’s do what we did with grep: put *.txt in single quotes to prevent the shell from expanding the * wildcard. This way, find actually gets the pattern *.txt, not the expanded filename LICENSE.txt:
 
     $ find . -name '*.txt'
 
