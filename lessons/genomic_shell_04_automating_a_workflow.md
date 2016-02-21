@@ -62,7 +62,6 @@ $ chmod +x myscript.sh
 After that, you can run the script as a regular program.
 
     $ ./myscript.sh
-    $ bash myscript.sh 
       My file name is untrimmed_fastq/SRR097977.fastq
       My file name is untrimmed_fastq/SRR098026.fastq
 
@@ -79,6 +78,9 @@ The thing about running programs on the command line is that the shell may not k
 
 
 ## A real shell script
+Before start, let's delete what we generate before
+
+       $ mr -rf ~/dc_workshop/results/fastqc_untrimmed_reads
 
 Now, let's do something real.  First, recall the code from our our fastqc
 workflow earlier, with a few extra "echo" statements.
