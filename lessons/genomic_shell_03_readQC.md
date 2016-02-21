@@ -101,6 +101,7 @@ The main functions of FastQC are
 #### Create a working directory for your analysis
 
       $ cd
+
 >this command takes us to the home directory     
              
      $ mkdir dc_workshop
@@ -115,7 +116,7 @@ The main functions of FastQC are
 * Move our sample data to our working (home) directory
    
 
-    $ mv ~/.dc_sampledata_lite/untrimmed_fastq/ ~/dc_workshop/data/
+    $ cp -a ~/.dc_sampledata_lite/untrimmed_fastq/ ~/dc_workshop/data/
 
 
 ### B. Run FastQC
