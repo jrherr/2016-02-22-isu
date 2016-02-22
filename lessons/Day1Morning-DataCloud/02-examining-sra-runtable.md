@@ -56,4 +56,3 @@ After answering the question, you should avoid saving this file; we don't want t
 * You can learn more about the SRA by reading the [SRA Documentation](http://www.ncbi.nlm.nih.gov/Traces/sra/)
 * The best way to transfer a large SRA dataset is by using the [SRA Toolkit](http://www.ncbi.nlm.nih.gov/Traces/sra/?view=toolkit_doc)
 
-Previous: [Introducing the dataset](01-intro-to-dataset.html)
