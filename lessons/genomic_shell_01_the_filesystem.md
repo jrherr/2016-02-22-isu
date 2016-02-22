@@ -626,9 +626,9 @@ important, let's rename it:
     $ ls 
     SRR098026-copy.fastq_DO_NOT_TOUCH!
 
-    Finally, we decided this was silly and want to start over.
+Finally, we decided this was silly and want to start over.
 
-    $ rm backup/SRR*
+    $ rm SRR*
 
 The `rm` file permanently removes the file. Be careful with this command. It doesn't
 just nicely put the files in the Trash. They're really gone.
@@ -650,6 +650,7 @@ By default, `rm`, will NOT delete directories. You can tell `rm` to
 delete a directory using the `-r` option. Let's delete that `new` directory
 we just made. Enter the following command:
 
+    $ cd ..
     $ rm -r backup
 
 ## Writing files
