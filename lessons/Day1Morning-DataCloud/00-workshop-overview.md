@@ -24,4 +24,3 @@ In this workshop, we're going to go from getting sequencing data back through to
 
 We'll use one dataset from start to finish to go through a full lifecycle of a genomics analysis.
 
-Next: [Introducing the dataset](01-intro-to-dataset.html)
