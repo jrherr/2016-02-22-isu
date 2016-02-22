@@ -53,4 +53,3 @@ Genomic analysis of a key innovation in an experimental Escherichia coli populat
 [Paper](Lenski_paper.pdf), [Supplemental materials](Lenski-s1.pdf)  
 Data on NCBI SRA: [http://www.ncbi.nlm.nih.gov/sra?term=SRA026813](http://www.ncbi.nlm.nih.gov/sra?term=SRA026813)
 
-Previous: [Introducing the dataset](00-intro-to-dataset.html)  |  Next: [Examining data from SRA database](02-examining-sra-runtable.html)
